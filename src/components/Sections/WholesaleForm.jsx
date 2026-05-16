@@ -8,9 +8,30 @@ import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY, VM_WHATSAP
 export default function WholesaleForm() {
   const [form, setForm] = useState({ name: "", phone: "", city: "", category: "", message: "" });
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [phoneError, setPhoneError] = useState("");
+
+  const validatePhone = (value) => {
+    const cleaned = value.replace(/[\s\-().+]/g, "");
+    const indian = /^(?:91)?[6-9]\d{9}$/.test(cleaned);
+    return indian;
+  };
+
+  const handlePhoneChange = (e) => {
+    const val = e.target.value;
+    setForm({ ...form, phone: val });
+    if (val && !validatePhone(val)) {
+      setPhoneError("Enter a valid 10-digit Indian mobile number (starting with 6–9)");
+    } else {
+      setPhoneError("");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validatePhone(form.phone)) {
+      setPhoneError("Enter a valid 10-digit Indian mobile number (starting with 6–9)");
+      return;
+    }
     setStatus("sending");
 
     // ── 1. Build WhatsApp message ──────────────────────────────────────────
@@ -148,7 +169,6 @@ export default function WholesaleForm() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {[
                   { id: "name", label: "Your Name / Business Name", type: "text", placeholder: "e.g. Sharma Boutique" },
-                  { id: "phone", label: "Phone / WhatsApp Number", type: "tel", placeholder: "+91 98765 43210" },
                   { id: "city", label: "City & State", type: "text", placeholder: "e.g. Jaipur, Rajasthan" },
                 ].map((f) => (
                   <div key={f.id}>
@@ -165,6 +185,28 @@ export default function WholesaleForm() {
                     />
                   </div>
                 ))}
+
+                {/* Phone field with Indian number validation */}
+                <div>
+                  <label className="block text-xs text-gray-400 tracking-widest uppercase mb-2">Phone / WhatsApp Number</label>
+                  <input
+                    type="tel"
+                    placeholder="+91 98765 43210"
+                    required
+                    value={form.phone}
+                    onChange={handlePhoneChange}
+                    disabled={status === "sending"}
+                    className={`w-full border rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 transition-all disabled:opacity-50 ${
+                      phoneError ? "border-red-400 focus:border-red-400" : "border-white/15"
+                    }`}
+                    style={{ background: "rgba(255,255,255,0.06)" }}
+                  />
+                  {phoneError && (
+                    <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
+                      <span>⚠</span> {phoneError}
+                    </p>
+                  )}
+                </div>
 
                 <div>
                   <label className="block text-xs text-gray-400 tracking-widest uppercase mb-2">Category Interested In</label>

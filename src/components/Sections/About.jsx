@@ -1,16 +1,16 @@
 import { FEATURES } from "../../data/constants";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
-/**
- * About Section Component
- * Company information and features showcase
- */
 export default function About() {
+  const imgRef = useScrollReveal();
+  const textRef = useScrollReveal();
+
   return (
     <section id="about" className="py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Image side */}
-          <div className="relative">
+          <div ref={imgRef} className="reveal relative">
             <img
               src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=580&h=480&fit=crop"
               alt="VM Jewellers store"
@@ -23,7 +23,7 @@ export default function About() {
           </div>
 
           {/* Text side */}
-          <div>
+          <div ref={textRef} className="reveal">
             <p className="text-gold-500 text-xs tracking-[0.2em] uppercase font-medium mb-3">Who We Are</p>
             <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-5">
               Delhi's Trusted

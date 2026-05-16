@@ -19,7 +19,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-xs">© 2025 VM Jewellers. All rights reserved.</p>
+        <p className="text-xs">© {new Date().getFullYear()} VM Jewellers. All rights reserved.</p>
       </div>
     </footer>
   );

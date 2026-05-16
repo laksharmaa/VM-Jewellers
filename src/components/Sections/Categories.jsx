@@ -1,14 +1,14 @@
 import { CATEGORIES } from "../../data/constants";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
-/**
- * Categories Section Component
- * Shop by category grid display
- */
 export default function Categories() {
+  const headingRef = useScrollReveal();
+  const gridRef = useScrollReveal();
+
   return (
     <section id="categories" className="py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        <div ref={headingRef} className="reveal text-center mb-14">
           <p className="text-gold-500 text-xs tracking-[0.2em] uppercase font-medium mb-3">Our Collections</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">Shop by Category</h2>
           <div className="gold-line w-24 mx-auto mb-5" />
@@ -17,7 +17,7 @@ export default function Categories() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+        <div ref={gridRef} className="reveal-stagger grid grid-cols-2 sm:grid-cols-3 gap-5">
           {CATEGORIES.map((cat) => (
             <div key={cat.name} className="card-hover group cursor-pointer rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm">
               <div className="relative h-44 overflow-hidden">

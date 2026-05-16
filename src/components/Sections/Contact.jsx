@@ -1,20 +1,20 @@
 import { CONTACT_INFO } from "../../data/constants";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
-/**
- * Contact Section Component
- * Store information and embedded map
- */
 export default function Contact() {
+  const headingRef = useScrollReveal();
+  const contentRef = useScrollReveal();
+
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        <div ref={headingRef} className="reveal text-center mb-14">
           <p className="text-gold-500 text-xs tracking-[0.2em] uppercase font-medium mb-3">Find Us</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">Visit the Store</h2>
           <div className="gold-line w-24 mx-auto" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div ref={contentRef} className="reveal grid md:grid-cols-2 gap-10">
           {/* Info card */}
           <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
             <h3 className="font-display text-2xl font-semibold text-gray-900 mb-6">VM Jewellers</h3>
@@ -56,7 +56,7 @@ export default function Contact() {
           <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-full min-h-[320px]">
             <iframe
               title="VM Jewellers Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5!2d77.2!3d28.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSGFudW1hbiBNYW5kaXIsIFJ1aSBNYW5kaSwgU2FkYXIgQmF6YXI!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.9861083025216!2d77.2093030791063!3d28.660134612864027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdedada1890f%3A0xa095ba07c172e15d!2sV.M%20Jewellers%20-%20India&#39;s%20%231%20Wholesaler%20%26%20Manufacturer%20Of%20Imitation%20Jewellery%20Store!5e0!3m2!1sen!2sin!4v1778920766613!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "320px" }}

@@ -1,14 +1,14 @@
 import { TESTIMONIALS, CONTACT_INFO } from "../../data/constants";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
-/**
- * Testimonials Section Component
- * Customer reviews and ratings
- */
 export default function Testimonials() {
+  const headingRef = useScrollReveal();
+  const cardsRef = useScrollReveal();
+
   return (
     <section id="testimonials" className="py-20 px-4 sm:px-6 bg-gold-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        <div ref={headingRef} className="reveal text-center mb-14">
           <p className="text-gold-500 text-xs tracking-[0.2em] uppercase font-medium mb-3">What Customers Say</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">
             Trusted by Retailers
@@ -18,7 +18,7 @@ export default function Testimonials() {
           <div className="gold-line w-24 mx-auto" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={cardsRef} className="reveal-stagger grid md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t) => (
             <div key={t.name} className="bg-white rounded-2xl p-6 shadow-sm border border-gold-100 card-hover">
               <div className="flex mb-4">

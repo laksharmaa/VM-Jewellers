@@ -54,6 +54,6 @@ export const CONTACT_INFO = {
 
 // WhatsApp info
 export const WHATSAPP_LINKS = {
-  main: "https://wa.me/919606422413",
+  main: "https://wa.me/916350172713",
   personal: "https://wa.me/916350172713",
 };

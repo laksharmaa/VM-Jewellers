@@ -1,11 +1,8 @@
-/**
- * WhatsApp Floating Button Component
- * Fixed position button for WhatsApp contact
- */
+import { WHATSAPP_LINKS } from "../../data/constants";
 export default function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/919606422413"
+      href={WHATSAPP_LINKS.main}
       target="_blank"
       rel="noreferrer"
       title="Chat on WhatsApp"

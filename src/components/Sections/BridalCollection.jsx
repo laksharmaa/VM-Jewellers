@@ -1,14 +1,14 @@
 import { BRIDAL } from "../../data/constants";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
-/**
- * Bridal Collection Section Component
- * Showcase of bridal jewellery collection
- */
 export default function BridalCollection() {
+  const headingRef = useScrollReveal();
+  const gridRef = useScrollReveal();
+
   return (
     <section id="bridal" className="py-20 px-4 sm:px-6 bg-gradient-to-br from-gold-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        <div ref={headingRef} className="reveal text-center mb-14">
           <p className="text-gold-500 text-xs tracking-[0.2em] uppercase font-medium mb-3">For Your Special Day</p>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">Bridal Collection</h2>
           <div className="gold-line w-24 mx-auto mb-5" />
@@ -17,7 +17,7 @@ export default function BridalCollection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={gridRef} className="reveal-stagger grid md:grid-cols-3 gap-6">
           {BRIDAL.map((item) => (
             <div key={item.name} className="card-hover group cursor-pointer rounded-2xl overflow-hidden bg-white border border-gold-100 shadow-sm">
               <div className="relative h-56 overflow-hidden">
