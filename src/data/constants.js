@@ -7,18 +7,18 @@ export const NAV_LINKS = [
 ];
 
 export const CATEGORIES = [
-  { name: "Necklaces", count: "100+ designs", emoji: "📿", img: "https://images.unsplash.com/photo-1599459183200-59c7687a0c70?w=400&h=300&fit=crop" },
-  { name: "Bangles", count: "200+ designs", emoji: "💛", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=300&fit=crop" },
-  { name: "Earrings", count: "150+ designs", emoji: "✨", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400&h=300&fit=crop" },
-  { name: "Pendant Sets", count: "70+ designs", emoji: "💎", img: "https://images.unsplash.com/photo-1601821765780-754fa98637c1?w=400&h=300&fit=crop" },
-  { name: "Finger Rings", count: "80+ designs", emoji: "💍", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=300&fit=crop" },
-  { name: "Payal / Anklets", count: "40+ designs", emoji: "🌸", img: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&h=300&fit=crop" },
+  { name: "Necklaces", count: "100+ designs", img: "https://images.pexels.com/photos/31772511/pexels-photo-31772511.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
+  { name: "Bangles", count: "200+ designs", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=300&fit=crop" },
+  { name: "Earrings", count: "150+ designs", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400&h=300&fit=crop" },
+  { name: "Pendant Sets", count: "70+ designs", img: "https://images.unsplash.com/photo-1601821765780-754fa98637c1?w=400&h=300&fit=crop" },
+  { name: "Finger Rings", count: "80+ designs", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=300&fit=crop" },
+  { name: "Payal / Anklets", count: "40+ designs", img: "https://images.pexels.com/photos/36726168/pexels-photo-36726168.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
 ];
 
 export const BRIDAL = [
   { name: "Kundan Bridal Set", desc: "Full necklace, earring & maang tikka set", img: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500&h=380&fit=crop" },
-  { name: "Polki Haar", desc: "Traditional gold-finish statement necklace", img: "https://images.unsplash.com/photo-1599459183200-59c7687a0c70?w=500&h=380&fit=crop" },
-  { name: "Choker Collection", desc: "Elegant chokers for all bridal looks", img: "https://images.unsplash.com/photo-1574100004472-e536d3b1a6b6?w=500&h=380&fit=crop" },
+  { name: "Polki Haar", desc: "Traditional gold-finish statement necklace", img: "https://images.pexels.com/photos/33547868/pexels-photo-33547868.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
+  { name: "Choker Collection", desc: "Elegant chokers for all bridal looks", img: "https://images.pexels.com/photos/17298688/pexels-photo-17298688.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" },
 ];
 
 export const TESTIMONIALS = [
@@ -28,10 +28,10 @@ export const TESTIMONIALS = [
 ];
 
 export const FEATURES = [
-  { icon: "🏆", title: "4.6★ on Justdial", desc: "33+ verified customer ratings" },
-  { icon: "🚚", title: "PAN India Delivery", desc: "Bulk orders shipped across India" },
-  { icon: "💰", title: "Wholesale Prices", desc: "Direct from manufacturer to you" },
-  { icon: "💬", title: "WhatsApp Ordering", desc: "Catalogue on demand, instant quotes" },
+  { icon: "trophy", title: "4.6★ on Justdial", desc: "33+ verified customer ratings" },
+  { icon: "truck", title: "PAN India Delivery", desc: "Bulk orders shipped across India" },
+  { icon: "tag", title: "Wholesale Prices", desc: "Direct from manufacturer to you" },
+  { icon: "message", title: "WhatsApp Ordering", desc: "Catalogue on demand, instant quotes" },
 ];
 
 // EmailJS Configuration
